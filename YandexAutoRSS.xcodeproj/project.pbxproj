@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B174F8D91FA9B0FB00E28E99 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = B174F8D81FA9B0FB00E28E99 /* ReadMe */; };
 		B1C6AD551FA9AFAB008D9317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6AD541FA9AFAB008D9317 /* AppDelegate.swift */; };
 		B1C6AD571FA9AFAB008D9317 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6AD561FA9AFAB008D9317 /* ViewController.swift */; };
 		B1C6AD5A1FA9AFAB008D9317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C6AD581FA9AFAB008D9317 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B174F8D81FA9B0FB00E28E99 /* ReadMe */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
 		B1C6AD511FA9AFAB008D9317 /* YandexAutoRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexAutoRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C6AD541FA9AFAB008D9317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C6AD561FA9AFAB008D9317 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 		B1C6AD481FA9AFAB008D9317 = {
 			isa = PBXGroup;
 			children = (
+				B174F8D81FA9B0FB00E28E99 /* ReadMe */,
 				B1C6AD531FA9AFAB008D9317 /* YandexAutoRSS */,
 				B1C6AD521FA9AFAB008D9317 /* Products */,
 			);
@@ -123,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B174F8D91FA9B0FB00E28E99 /* ReadMe in Resources */,
 				B1C6AD5F1FA9AFAB008D9317 /* LaunchScreen.storyboard in Resources */,
 				B1C6AD5C1FA9AFAB008D9317 /* Assets.xcassets in Resources */,
 				B1C6AD5A1FA9AFAB008D9317 /* Main.storyboard in Resources */,
