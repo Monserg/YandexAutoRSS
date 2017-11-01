@@ -14,7 +14,7 @@ import UIKit
 
 // MARK: - Presentation Logic protocols
 protocol NewsListShowPresentationLogic {
-    func presentSomething(response: NewsListShowModels.Something.ResponseModel)
+    func presentFetchedFeedItems(fromResponseModel responseModel: NewsListShowModels.FetchedFeed.ResponseModel)
 }
 
 class NewsListShowPresenter: NewsListShowPresentationLogic {
@@ -23,8 +23,17 @@ class NewsListShowPresenter: NewsListShowPresentationLogic {
     
     
     // MARK: - Presentation Logic implementation
-    func presentSomething(response: NewsListShowModels.Something.ResponseModel) {
-        let viewModel = NewsListShowModels.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentFetchedFeedItems(fromResponseModel responseModel: NewsListShowModels.FetchedFeed.ResponseModel) {
+        var displayedFeedItems: [NewsListShowModels.FetchedFeed.ViewModel.DisplayedFeedItem] = []
+
+        if let feed = responseModel.feed {
+            for item in feed.items {
+                let displayedFeedItem = NewsListShowModels.FetchedFeed.ViewModel.DisplayedFeedItem(title: item.title)
+                displayedFeedItems.append(displayedFeedItem)
+            }
+        }
+        
+        let viewModel = NewsListShowModels.FetchedFeed.ViewModel(displayedFeedItems: displayedFeedItems)
+        viewController?.displayFetchedFeedItems(fromViewModel: viewModel)
     }
 }

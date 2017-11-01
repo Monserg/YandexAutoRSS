@@ -14,7 +14,7 @@ import UIKit
 
 // MARK: - Input & Output protocols
 protocol NewsListShowDisplayLogic: class {
-    func displaySomething(viewModel: NewsListShowModels.Something.ViewModel)
+    func displayFetchedFeedItems(fromViewModel viewModel: NewsListShowModels.FetchedFeed.ViewModel)
 }
 
 class NewsListShowViewController: UIViewController {
@@ -22,9 +22,20 @@ class NewsListShowViewController: UIViewController {
     var interactor: NewsListShowBusinessLogic?
     var router: (NSObjectProtocol & NewsListShowRoutingLogic & NewsListShowDataPassing)?
     
+    var displayedFeedItems: [NewsListShowModels.FetchedFeed.ViewModel.DisplayedFeedItem] = []
+
     
     // MARK: - IBOutlets
-    // @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.estimatedRowHeight = 44
+            tableView.rowHeight = UITableViewAutomaticDimension
+        }
+    }
+        
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     
     // MARK: - Object lifecycle
@@ -43,10 +54,10 @@ class NewsListShowViewController: UIViewController {
     
     // MARK: - Setup
     private func setup() {
-        let viewController  =   self
-        let interactor      =   NewsListShowInteractor()
-        let presenter       =   NewsListShowPresenter()
-        let router          =   NewsListShowRouter()
+        let viewController          =   self
+        let interactor              =   NewsListShowInteractor()
+        let presenter               =   NewsListShowPresenter()
+        let router                  =   NewsListShowRouter()
         
         viewController.interactor   =   interactor
         viewController.router       =   router
@@ -73,23 +84,75 @@ class NewsListShowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewSettingsDidLoad()
+        fetchFeedsLoad()
     }
     
     
     // MARK: - Custom Functions
-    func viewSettingsDidLoad() {
-        let requestModel = NewsListShowModels.Something.RequestModel()
+    func fetchFeedsLoad() {
+        view.isUserInteractionEnabled = false
+        let requestModel = NewsListShowModels.FetchedFeed.RequestModel()
+        interactor?.fetchFeed(withRequestModel: requestModel)
+    }
+}
+
+
+// MARK: - UITableViewDataSource
+extension NewsListShowViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayedFeedItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let displayedFeedItem = displayedFeedItems[indexPath.row]
+        var cell = tableView.dequeueReusableCell(withIdentifier: "FeedItemCell")
         
-        interactor?.doSomething(request: requestModel)
+        if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "FeedItemCell")
+        }
+        
+        cell?.textLabel?.text = displayedFeedItem.title
+        cell?.textLabel?.numberOfLines = 0
+        
+        return cell!
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+extension NewsListShowViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 44.0
+//    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
     }
 }
 
 
 // MARK: - NewsListShowDisplayLogic
 extension NewsListShowViewController: NewsListShowDisplayLogic {
-    func displaySomething(viewModel: NewsListShowModels.Something.ViewModel) {
+    func displayFetchedFeedItems(fromViewModel viewModel: NewsListShowModels.FetchedFeed.ViewModel) {
         // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
+        navigationItem.title = router?.dataStore?.feed?.title
+        
+        displayedFeedItems = viewModel.displayedFeedItems
+        tableView.reloadData()
+        
+        view.isUserInteractionEnabled = true
+        spinner.stopAnimating()
     }
 }

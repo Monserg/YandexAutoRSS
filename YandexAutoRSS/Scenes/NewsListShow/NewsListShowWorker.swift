@@ -11,9 +11,28 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireRSSParser
 
 class NewsListShowWorker {
     // MARK: - Business Logic
-    func doSomeWork() {
+    func fetchFeed(completionHandler: @escaping (RSSFeed?) -> Void) {
+        let rss = [
+                        "https://news.yandex.ru/auto.rss",
+                        "https://news.yandex.ru/music.rss",
+                        "https://news.yandex.ru/showbusiness.rss",
+                        "https://news.yandex.ru/movies.rss",
+                        "https://news.yandex.ru/gadgets.rss"
+                    ]
+        
+        let url = rss[Int(arc4random_uniform(UInt32(rss.count)))]
+        
+        Alamofire.request(url).responseRSS() { (response) -> Void in
+            if let feed: RSSFeed = response.result.value {
+                completionHandler(feed)
+            } else {
+                completionHandler(nil)
+            }
+        }
     }
 }

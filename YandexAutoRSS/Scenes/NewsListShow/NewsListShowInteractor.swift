@@ -11,29 +11,33 @@
 //
 
 import UIKit
+import AlamofireRSSParser
 
 // MARK: - Business Logic protocols
 protocol NewsListShowBusinessLogic {
-    func doSomething(request: NewsListShowModels.Something.RequestModel)
+    func fetchFeed(withRequestModel requestModel: NewsListShowModels.FetchedFeed.RequestModel)
 }
 
 protocol NewsListShowDataStore {
-    //var name: String { get set }
+    var feed: RSSFeed? { get }
 }
 
 class NewsListShowInteractor: NewsListShowBusinessLogic, NewsListShowDataStore {
     // MARK: - Properties
     var presenter: NewsListShowPresentationLogic?
     var worker: NewsListShowWorker?
-    //var name: String = ""
+    
+    var feed: RSSFeed?
     
     
     // MARK: - Business logic implementation
-    func doSomething(request: NewsListShowModels.Something.RequestModel) {
+    func fetchFeed(withRequestModel requestModel: NewsListShowModels.FetchedFeed.RequestModel) {
         worker = NewsListShowWorker()
-        worker?.doSomeWork()
         
-        let responseModel = NewsListShowModels.Something.ResponseModel()
-        presenter?.presentSomething(response: responseModel)
+        worker?.fetchFeed(completionHandler: { feed in
+            self.feed = feed
+            let responseModel = NewsListShowModels.FetchedFeed.ResponseModel(feed: feed)
+            self.presenter?.presentFetchedFeedItems(fromResponseModel: responseModel)
+        })
     }
 }

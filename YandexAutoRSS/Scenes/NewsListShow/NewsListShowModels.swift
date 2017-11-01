@@ -11,18 +11,33 @@
 //
 
 import UIKit
+import AlamofireRSSParser
 
 // MARK: - Data models
 enum NewsListShowModels {
     // MARK: - Use cases
-    enum Something {
+    enum FetchedFeed {
         struct RequestModel {
         }
         
         struct ResponseModel {
+            var feed: RSSFeed?
         }
         
         struct ViewModel {
+            struct DisplayedFeedItem {
+                var title: String?
+//                var date: String
+//                var email: String
+//                var name: String
+//                var total: String
+                
+
+                
+            }
+            
+            var displayedFeedItems: [DisplayedFeedItem]
         }
     }
 }
+

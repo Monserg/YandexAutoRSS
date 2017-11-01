@@ -8,6 +8,13 @@ http://take.ms/KSpxd
 http://take.ms/2vByc
 
 
+news:
+https://news.yandex.ru/music.rss
+https://news.yandex.ru/showbusiness.rss
+https://news.yandex.ru/movies.rss
+https://news.yandex.ru/gadgets.rss
+
+
 XML screenshots:
 http://take.ms/Loftf
 http://take.ms/4VIge
@@ -18,5 +25,14 @@ https://github.com/AdeptusAstartes/AlamofireRSSParser
 
 
 Cases:
-1. create NewsListShow
+1. create NewsListShow:
+    1) add delegates;
+    2) create dataSource;
+    3) add cell design;
+    4) create DisplayedNews model;
+    5) add VIP-cycle for read & parse RSS: create Worker;
+    6) change scene title;
+    7) add Activity spinner;
+    8) auto select RSS from array.
+
 2. create NewsDetailShow

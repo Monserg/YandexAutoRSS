@@ -21,9 +21,11 @@
 		B174F8F51FA9B38000E28E99 /* NewsDetailShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174F8EF1FA9B38000E28E99 /* NewsDetailShowModels.swift */; };
 		B174F8F61FA9B38000E28E99 /* NewsDetailShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174F8F01FA9B38000E28E99 /* NewsDetailShowViewController.swift */; };
 		B174F8F71FA9B38000E28E99 /* NewsDetailShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174F8F11FA9B38000E28E99 /* NewsDetailShowInteractor.swift */; };
+		B174F8F91FA9B41900E28E99 /* NewsListShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B174F8F81FA9B41900E28E99 /* NewsListShow.storyboard */; };
+		B174F8FB1FA9B42500E28E99 /* NewsDetailShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B174F8FA1FA9B42500E28E99 /* NewsDetailShow.storyboard */; };
+		B174F9001FA9B62E00E28E99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B174F8FE1FA9B62E00E28E99 /* Images.xcassets */; };
+		B174F9011FA9B62E00E28E99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B174F8FF1FA9B62E00E28E99 /* Info.plist */; };
 		B1C6AD551FA9AFAB008D9317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6AD541FA9AFAB008D9317 /* AppDelegate.swift */; };
-		B1C6AD5A1FA9AFAB008D9317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C6AD581FA9AFAB008D9317 /* Main.storyboard */; };
-		B1C6AD5C1FA9AFAB008D9317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C6AD5B1FA9AFAB008D9317 /* Assets.xcassets */; };
 		B1C6AD5F1FA9AFAB008D9317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C6AD5D1FA9AFAB008D9317 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -43,12 +45,13 @@
 		B174F8EF1FA9B38000E28E99 /* NewsDetailShowModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailShowModels.swift; sourceTree = "<group>"; };
 		B174F8F01FA9B38000E28E99 /* NewsDetailShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailShowViewController.swift; sourceTree = "<group>"; };
 		B174F8F11FA9B38000E28E99 /* NewsDetailShowInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailShowInteractor.swift; sourceTree = "<group>"; };
+		B174F8F81FA9B41900E28E99 /* NewsListShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsListShow.storyboard; sourceTree = "<group>"; };
+		B174F8FA1FA9B42500E28E99 /* NewsDetailShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsDetailShow.storyboard; sourceTree = "<group>"; };
+		B174F8FE1FA9B62E00E28E99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B174F8FF1FA9B62E00E28E99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../../../../Downloads/AlamofireRSSParser-master/Example/AlamofireRSSParser/Info.plist"; sourceTree = "<group>"; };
 		B1C6AD511FA9AFAB008D9317 /* YandexAutoRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexAutoRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C6AD541FA9AFAB008D9317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1C6AD591FA9AFAB008D9317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B1C6AD5B1FA9AFAB008D9317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1C6AD5E1FA9AFAB008D9317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B1C6AD601FA9AFAB008D9317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6734549006D2503C3E2D44A /* Pods-YandexAutoRSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexAutoRSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexAutoRSS/Pods-YandexAutoRSS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +103,8 @@
 		B174F8DC1FA9B2EE00E28E99 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				B1C6AD581FA9AFAB008D9317 /* Main.storyboard */,
+				B174F8F81FA9B41900E28E99 /* NewsListShow.storyboard */,
+				B174F8FA1FA9B42500E28E99 /* NewsDetailShow.storyboard */,
 				B1C6AD5D1FA9AFAB008D9317 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -109,21 +113,21 @@
 		B174F8DD1FA9B31800E28E99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B1C6AD5B1FA9AFAB008D9317 /* Assets.xcassets */,
-				B1C6AD601FA9AFAB008D9317 /* Info.plist */,
+				B174F8FE1FA9B62E00E28E99 /* Images.xcassets */,
+				B174F8FF1FA9B62E00E28E99 /* Info.plist */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B174F8DE1FA9B33800E28E99 /* NewsListShow */ = {
 			isa = PBXGroup;
 			children = (
-				B174F8E01FA9B37400E28E99 /* NewsListShowPresenter.swift */,
-				B174F8E11FA9B37400E28E99 /* NewsListShowWorker.swift */,
-				B174F8E21FA9B37400E28E99 /* NewsListShowRouter.swift */,
-				B174F8E31FA9B37400E28E99 /* NewsListShowModels.swift */,
-				B174F8E41FA9B37400E28E99 /* NewsListShowViewController.swift */,
 				B174F8E51FA9B37400E28E99 /* NewsListShowInteractor.swift */,
+				B174F8E31FA9B37400E28E99 /* NewsListShowModels.swift */,
+				B174F8E01FA9B37400E28E99 /* NewsListShowPresenter.swift */,
+				B174F8E21FA9B37400E28E99 /* NewsListShowRouter.swift */,
+				B174F8E41FA9B37400E28E99 /* NewsListShowViewController.swift */,
+				B174F8E11FA9B37400E28E99 /* NewsListShowWorker.swift */,
 			);
 			path = NewsListShow;
 			sourceTree = "<group>";
@@ -131,12 +135,12 @@
 		B174F8DF1FA9B35800E28E99 /* NewsDetailShow */ = {
 			isa = PBXGroup;
 			children = (
-				B174F8EC1FA9B38000E28E99 /* NewsDetailShowPresenter.swift */,
-				B174F8ED1FA9B38000E28E99 /* NewsDetailShowWorker.swift */,
-				B174F8EE1FA9B38000E28E99 /* NewsDetailShowRouter.swift */,
-				B174F8EF1FA9B38000E28E99 /* NewsDetailShowModels.swift */,
-				B174F8F01FA9B38000E28E99 /* NewsDetailShowViewController.swift */,
 				B174F8F11FA9B38000E28E99 /* NewsDetailShowInteractor.swift */,
+				B174F8EF1FA9B38000E28E99 /* NewsDetailShowModels.swift */,
+				B174F8EC1FA9B38000E28E99 /* NewsDetailShowPresenter.swift */,
+				B174F8EE1FA9B38000E28E99 /* NewsDetailShowRouter.swift */,
+				B174F8F01FA9B38000E28E99 /* NewsDetailShowViewController.swift */,
+				B174F8ED1FA9B38000E28E99 /* NewsDetailShowWorker.swift */,
 			);
 			path = NewsDetailShow;
 			sourceTree = "<group>";
@@ -235,9 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B174F8D91FA9B0FB00E28E99 /* ReadMe in Resources */,
+				B174F9001FA9B62E00E28E99 /* Images.xcassets in Resources */,
+				B174F9011FA9B62E00E28E99 /* Info.plist in Resources */,
+				B174F8FB1FA9B42500E28E99 /* NewsDetailShow.storyboard in Resources */,
+				B174F8F91FA9B41900E28E99 /* NewsListShow.storyboard in Resources */,
 				B1C6AD5F1FA9AFAB008D9317 /* LaunchScreen.storyboard in Resources */,
-				B1C6AD5C1FA9AFAB008D9317 /* Assets.xcassets in Resources */,
-				B1C6AD5A1FA9AFAB008D9317 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,14 +329,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B1C6AD581FA9AFAB008D9317 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1C6AD591FA9AFAB008D9317 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B1C6AD5D1FA9AFAB008D9317 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -454,15 +452,17 @@
 			baseConfigurationReference = F6734549006D2503C3E2D44A /* Pods-YandexAutoRSS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexAutoRSS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.remotejob.YandexAutoRSS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -471,15 +471,17 @@
 			baseConfigurationReference = 6FD01F35637D84DD8B084160 /* Pods-YandexAutoRSS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexAutoRSS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.remotejob.YandexAutoRSS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
