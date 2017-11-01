@@ -35,4 +35,6 @@ Cases:
     7) add Activity spinner;
     8) auto select RSS from array.
 
-2. create NewsDetailShow
+2. create NewsDetailShow:
+    1) add route & pass data between scenes;
+

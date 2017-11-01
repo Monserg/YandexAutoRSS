@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import AlamofireRSSParser
+import OMGRssParser
 
 // MARK: - Business Logic protocols
 protocol NewsListShowBusinessLogic {
@@ -19,7 +19,8 @@ protocol NewsListShowBusinessLogic {
 }
 
 protocol NewsListShowDataStore {
-    var feed: RSSFeed? { get }
+    var feed: OMGFeedInfo? { get }
+//    var feed: RSSFeed? { get }
 }
 
 class NewsListShowInteractor: NewsListShowBusinessLogic, NewsListShowDataStore {
@@ -27,8 +28,8 @@ class NewsListShowInteractor: NewsListShowBusinessLogic, NewsListShowDataStore {
     var presenter: NewsListShowPresentationLogic?
     var worker: NewsListShowWorker?
     
-    var feed: RSSFeed?
-    
+    var feed: OMGFeedInfo?
+
     
     // MARK: - Business logic implementation
     func fetchFeed(withRequestModel requestModel: NewsListShowModels.FetchedFeed.RequestModel) {

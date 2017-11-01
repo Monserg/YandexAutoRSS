@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import AlamofireRSSParser
+import OMGRssParser
 
 // MARK: - Data models
 enum NewsListShowModels {
@@ -21,19 +21,14 @@ enum NewsListShowModels {
         }
         
         struct ResponseModel {
-            var feed: RSSFeed?
+            var feed: OMGFeedInfo?
         }
         
         struct ViewModel {
             struct DisplayedFeedItem {
-                var title: String?
-//                var date: String
-//                var email: String
-//                var name: String
-//                var total: String
-                
-
-                
+                var title: String
+                var pubDate: Date
+                var pubDateString: String
             }
             
             var displayedFeedItems: [DisplayedFeedItem]

@@ -117,6 +117,7 @@ extension NewsListShowViewController: UITableViewDataSource {
         
         cell?.textLabel?.text = displayedFeedItem.title
         cell?.textLabel?.numberOfLines = 0
+        cell?.detailTextLabel?.text = displayedFeedItem.pubDateString
         
         return cell!
     }
@@ -125,10 +126,6 @@ extension NewsListShowViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension NewsListShowViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 44.0
-//    }
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
     }
@@ -147,7 +144,7 @@ extension NewsListShowViewController: UITableViewDelegate {
 extension NewsListShowViewController: NewsListShowDisplayLogic {
     func displayFetchedFeedItems(fromViewModel viewModel: NewsListShowModels.FetchedFeed.ViewModel) {
         // NOTE: Display the result from the Presenter
-        navigationItem.title = router?.dataStore?.feed?.title
+        navigationItem.title = viewModel.displayedFeedItems.count == 0 ? "Empty Feed" : router?.dataStore?.feed?.title
         
         displayedFeedItems = viewModel.displayedFeedItems
         tableView.reloadData()

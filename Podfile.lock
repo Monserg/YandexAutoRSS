@@ -1,15 +1,19 @@
 PODS:
-  - Alamofire (4.5.1)
-  - AlamofireRSSParser (2.0.1):
-    - Alamofire
+  - Ji (2.0.1):
+    - Ji/Ji (= 2.0.1)
+  - Ji/Ji (2.0.1):
+    - Ji/Ji-libxml
+  - Ji/Ji-libxml (2.0.1)
+  - OMGRssParser (0.1.0):
+    - Ji (~> 2.0.0)
 
 DEPENDENCIES:
-  - AlamofireRSSParser (~> 2.0)
+  - OMGRssParser (~> 0.1)
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  AlamofireRSSParser: 86243cd156b94b9d97d8f915fa44a0f15bd1bfb7
+  Ji: 6bb602a28dd08b804158f64990e6051ed5de0110
+  OMGRssParser: 4a91cf181712daceaf153a6e11d7526f1588e8eb
 
-PODFILE CHECKSUM: 2cbe93c558b4a0df705025c1b0e2899896c29adc
+PODFILE CHECKSUM: 3d91372e4f3446e1b5642f0f9609394dc1c6645c
 
 COCOAPODS: 1.4.0.beta.1

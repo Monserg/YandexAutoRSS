@@ -26,14 +26,17 @@ class NewsListShowPresenter: NewsListShowPresentationLogic {
     func presentFetchedFeedItems(fromResponseModel responseModel: NewsListShowModels.FetchedFeed.ResponseModel) {
         var displayedFeedItems: [NewsListShowModels.FetchedFeed.ViewModel.DisplayedFeedItem] = []
 
-        if let feed = responseModel.feed {
-            for item in feed.items {
-                let displayedFeedItem = NewsListShowModels.FetchedFeed.ViewModel.DisplayedFeedItem(title: item.title)
+        if let feed = responseModel.feed, let feedItems = feed.feedItems {
+            for item in feedItems {
+                let pubDate = item.pubDate ?? ""
+                let displayedFeedItem = NewsListShowModels.FetchedFeed.ViewModel.DisplayedFeedItem(title: item.title ?? "",
+                                                                                                   pubDate: pubDate.convertToDate(),
+                                                                                                   pubDateString: pubDate.convertToDate().convertToString())
                 displayedFeedItems.append(displayedFeedItem)
             }
         }
         
-        let viewModel = NewsListShowModels.FetchedFeed.ViewModel(displayedFeedItems: displayedFeedItems)
+        let viewModel = NewsListShowModels.FetchedFeed.ViewModel(displayedFeedItems: displayedFeedItems.sorted(by: { $0.pubDate > $1.pubDate }))
         viewController?.displayFetchedFeedItems(fromViewModel: viewModel)
     }
 }

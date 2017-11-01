@@ -11,12 +11,11 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireRSSParser
+import OMGRssParser
 
 class NewsListShowWorker {
     // MARK: - Business Logic
-    func fetchFeed(completionHandler: @escaping (RSSFeed?) -> Void) {
+    func fetchFeed(completionHandler: @escaping (OMGFeedInfo?) -> Void) {
         let rss = [
                         "https://news.yandex.ru/auto.rss",
                         "https://news.yandex.ru/music.rss",
@@ -25,14 +24,16 @@ class NewsListShowWorker {
                         "https://news.yandex.ru/gadgets.rss"
                     ]
         
-        let url = rss[Int(arc4random_uniform(UInt32(rss.count)))]
-        
-        Alamofire.request(url).responseRSS() { (response) -> Void in
-            if let feed: RSSFeed = response.result.value {
-                completionHandler(feed)
-            } else {
-                completionHandler(nil)
+        let rssParser = OMGRssParser(urlStr: rss[Int(arc4random_uniform(UInt32(rss.count)))])
+
+        rssParser.parse(completionHandler: { (info, error) in
+            guard let info = info else {
+                return completionHandler(nil)
             }
-        }
+            
+            completionHandler(info)
+        })
+        
+//        return completionHandler(nil)
     }
 }

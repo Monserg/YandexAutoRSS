@@ -6,6 +6,6 @@ use_frameworks!
 
 target 'YandexAutoRSS' do
 
-    pod 'AlamofireRSSParser', '~> 2.0'
+    pod 'OMGRssParser', '~> 0.1'
 
 end
