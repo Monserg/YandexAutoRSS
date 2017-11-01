@@ -21,34 +21,42 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fHR-CQ-txq">
                                 <rect key="frame" x="0.0" y="20" width="320" height="320"/>
-                                <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fHR-CQ-txq" secondAttribute="height" multiplier="1:1" id="5zi-LM-tGb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3U-JI-SLG">
-                                <rect key="frame" x="30" y="355" width="260" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NA4-hK-hmd">
+                                <rect key="frame" x="142" y="162" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59V-GJ-lf9">
+                                <rect key="frame" x="30" y="355" width="260" height="198"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NA4-hK-hmd" firstAttribute="centerY" secondItem="fHR-CQ-txq" secondAttribute="centerY" id="CRU-AA-ANg"/>
+                            <constraint firstItem="v6T-Ly-x9a" firstAttribute="trailing" secondItem="59V-GJ-lf9" secondAttribute="trailing" constant="30" id="DAa-Jm-HRb"/>
+                            <constraint firstItem="59V-GJ-lf9" firstAttribute="top" secondItem="fHR-CQ-txq" secondAttribute="bottom" constant="15" id="FCl-O8-wLu"/>
                             <constraint firstItem="fHR-CQ-txq" firstAttribute="top" secondItem="v6T-Ly-x9a" secondAttribute="top" id="JLt-Pb-x4Z"/>
-                            <constraint firstItem="i3U-JI-SLG" firstAttribute="top" secondItem="fHR-CQ-txq" secondAttribute="bottom" constant="15" id="LWx-Su-abE"/>
+                            <constraint firstItem="NA4-hK-hmd" firstAttribute="centerX" secondItem="fHR-CQ-txq" secondAttribute="centerX" id="L8W-NB-qTX"/>
                             <constraint firstItem="v6T-Ly-x9a" firstAttribute="trailing" secondItem="fHR-CQ-txq" secondAttribute="trailing" id="SC8-Bz-x5c"/>
-                            <constraint firstItem="i3U-JI-SLG" firstAttribute="leading" secondItem="v6T-Ly-x9a" secondAttribute="leading" constant="30" id="c2D-FG-kdT"/>
-                            <constraint firstItem="i3U-JI-SLG" firstAttribute="centerX" secondItem="HEJ-g6-fhO" secondAttribute="centerX" id="l8b-o6-8Az"/>
+                            <constraint firstItem="59V-GJ-lf9" firstAttribute="leading" secondItem="v6T-Ly-x9a" secondAttribute="leading" constant="30" id="dPO-Ah-E9t"/>
+                            <constraint firstItem="v6T-Ly-x9a" firstAttribute="bottom" secondItem="59V-GJ-lf9" secondAttribute="bottom" constant="15" id="kVQ-nN-awP"/>
                             <constraint firstItem="fHR-CQ-txq" firstAttribute="leading" secondItem="v6T-Ly-x9a" secondAttribute="leading" id="sof-g9-4PX"/>
-                            <constraint firstItem="v6T-Ly-x9a" firstAttribute="trailing" secondItem="i3U-JI-SLG" secondAttribute="trailing" constant="30" id="vY9-wm-uIL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v6T-Ly-x9a"/>
                     </view>
                     <navigationItem key="navigationItem" title="Auto News" id="IrJ-uR-5CM"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="i3U-JI-SLG" id="Hc7-Nn-pFI"/>
+                        <outlet property="descriptionTextView" destination="59V-GJ-lf9" id="GHd-6b-3dE"/>
                         <outlet property="imageView" destination="fHR-CQ-txq" id="vdK-7a-RYG"/>
+                        <outlet property="imageViewTopConstraint" destination="JLt-Pb-x4Z" id="chi-57-UbC"/>
+                        <outlet property="spinner" destination="NA4-hK-hmd" id="QPV-Eh-a3r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVe-Wa-mgu" userLabel="First Responder" sceneMemberID="firstResponder"/>

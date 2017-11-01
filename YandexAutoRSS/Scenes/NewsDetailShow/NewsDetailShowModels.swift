@@ -22,13 +22,13 @@ enum NewsDetailShowModels {
         struct ResponseModel {
             let title: String
             let description: String
-//            let imageURLString: String
+            let imageURLString: String?
         }
         
         struct ViewModel {
             let title: String
             let description: String
-//            let imageURL: URL?
+            let imageURL: URL?
         }
     }
 }

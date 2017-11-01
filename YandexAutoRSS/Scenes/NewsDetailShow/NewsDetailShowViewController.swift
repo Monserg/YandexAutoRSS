@@ -26,7 +26,9 @@ class NewsDetailShowViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!    
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     
     
     // MARK: - Object lifecycle
@@ -91,23 +93,22 @@ class NewsDetailShowViewController: UIViewController {
 extension NewsDetailShowViewController: NewsDetailShowDisplayLogic {
     func displayFeedItem(fromViewModel viewModel: NewsDetailShowModels.FeedItem.ViewModel) {
         // NOTE: Display the result from the Presenter
-        // TODO: UNCOMMENT WHEN USE IMAGE URL
-        /*
         if let imageURL = viewModel.imageURL {
             imageView.kf.setImage(with: ImageResource.init(downloadURL: imageURL, cacheKey: imageURL.absoluteString),
                                   placeholder: nil,
                                   options: [.transition(ImageTransition.fade(1)),
                                             .processor(ResizingImageProcessor(referenceSize: imageView.frame.size,
-                                                                              mode: .aspectFill))],
+                                                                              mode: .aspectFit))],
                                   completionHandler: { image, error, cacheType, imageURL in
                                     self.imageView.kf.cancelDownloadTask()
+                                    self.spinner.stopAnimating()
             })
         } else {
-            imageView.image = UIImage.init(named: "")
+            imageView.image = UIImage.init(named: "no-image-3")
+            self.spinner.stopAnimating()
         }
-         */
         
-        descriptionLabel.text = viewModel.description
+        descriptionTextView.text = viewModel.description
         navigationItem.title = viewModel.title
     }
 }

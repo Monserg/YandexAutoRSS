@@ -29,6 +29,7 @@ class NewsListShowPresenter: NewsListShowPresentationLogic {
         if let feed = responseModel.feed, let feedItems = feed.items {
             for item in feedItems {
                 let pubDate = item.pubDate!
+                
                 let displayedFeedItem = NewsListShowModels.FetchedFeed.ViewModel.DisplayedFeedItem(title: item.title ?? "",
                                                                                                    pubDate: pubDate,
                                                                                                    pubDateString: pubDate.convertToString())

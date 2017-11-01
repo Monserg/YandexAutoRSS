@@ -24,7 +24,8 @@ class NewsDetailShowPresenter: NewsDetailShowPresentationLogic {
     
     // MARK: - Presentation Logic implementation
     func presentFeedItem(fromResponseModel responseModel: NewsDetailShowModels.FeedItem.ResponseModel) {
-        let viewModel = NewsDetailShowModels.FeedItem.ViewModel(title: responseModel.title,description: responseModel.description)
+        let imageURL = URL.init(string: responseModel.imageURLString ?? "")
+        let viewModel = NewsDetailShowModels.FeedItem.ViewModel(title: responseModel.title, description: responseModel.description, imageURL: imageURL)
         viewController?.displayFeedItem(fromViewModel: viewModel)
     }
 }

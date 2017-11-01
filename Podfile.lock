@@ -6,8 +6,8 @@ PODS:
   - Kingfisher (4.2.0)
 
 DEPENDENCIES:
-  - Crashlytics
-  - Fabric
+  - Crashlytics (~> 3.9)
+  - Fabric (~> 1.7)
   - FeedKit (~> 7.0)
   - Kingfisher (~> 4.2)
 
@@ -17,6 +17,6 @@ SPEC CHECKSUMS:
   FeedKit: 5f044bbefb6eea7b2f1ff1321b575295bfbdf3fc
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
 
-PODFILE CHECKSUM: 8f00547738afc3eafe1b64e17dade8b5da220a46
+PODFILE CHECKSUM: b5843a0b80f02899fd259b4f8827e6f4ce3eb036
 
 COCOAPODS: 1.4.0.beta.1

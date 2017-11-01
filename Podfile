@@ -6,8 +6,8 @@ use_frameworks!
 
 target 'YandexAutoRSS' do
 
-    pod 'Fabric'
-    pod 'Crashlytics'
+    pod 'Fabric', '~> 1.7'
+    pod 'Crashlytics', '~> 3.9'
     pod 'Kingfisher', '~> 4.2'
     pod 'FeedKit', '~> 7.0'
     

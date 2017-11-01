@@ -35,7 +35,10 @@ class NewsDetailShowInteractor: NewsDetailShowBusinessLogic, NewsDetailShowDataS
         worker = NewsDetailShowWorker()
 //        worker?.doSomeWork()
         
-        let responseModel = NewsDetailShowModels.FeedItem.ResponseModel(title: feedItem.title!, description: feedItem.description!)
+        let enclosure = feedItem.enclosure
+        let imageURLString = (enclosure?.attributes?.type == "image/jpeg") ? enclosure?.attributes?.url : nil
+        
+        let responseModel = NewsDetailShowModels.FeedItem.ResponseModel(title: feedItem.title!, description: feedItem.description!, imageURLString: imageURLString)
         presenter?.presentFeedItem(fromResponseModel: responseModel)
     }
 }

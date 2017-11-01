@@ -21,13 +21,17 @@ class NewsListShowWorker {
                         "https://news.yandex.ru/music.rss",
                         "https://news.yandex.ru/showbusiness.rss",
                         "https://news.yandex.ru/movies.rss",
-                        "https://news.yandex.ru/gadgets.rss"
+                        "https://news.yandex.ru/gadgets.rss",
+                        "https://gazeta.ua/rss"
                     ]
         
         
         let feedURL = URL(string: rss[Int(arc4random_uniform(UInt32(rss.count)))])!
         let parser = FeedParser(URL: feedURL)
         
+//        let url = "https://gazeta.ua/rss"
+//        let parser = FeedParser(URL: URL(string: url)!)
+
         // Parse asynchronously, not to block the UI.
         parser?.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
             // Do your thing, then back to the Main thread
