@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83FCF307D5E6A7ECB996B4EC /* Pods_YandexAutoRSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA96F448E070E0CB4C3C7F8 /* Pods_YandexAutoRSS.framework */; };
+		B10B16871FA9F86900500EF8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B10B16861FA9F86900500EF8 /* Info.plist */; };
 		B114B3281FA9D8A80005D37B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114B3271FA9D8A80005D37B /* String+Extension.swift */; };
 		B114B32A1FA9DAD90005D37B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114B3291FA9DAD90005D37B /* Date+Extension.swift */; };
 		B174F8D91FA9B0FB00E28E99 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = B174F8D81FA9B0FB00E28E99 /* ReadMe */; };
@@ -26,7 +27,6 @@
 		B174F8F91FA9B41900E28E99 /* NewsListShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B174F8F81FA9B41900E28E99 /* NewsListShow.storyboard */; };
 		B174F8FB1FA9B42500E28E99 /* NewsDetailShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B174F8FA1FA9B42500E28E99 /* NewsDetailShow.storyboard */; };
 		B174F9001FA9B62E00E28E99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B174F8FE1FA9B62E00E28E99 /* Images.xcassets */; };
-		B174F9011FA9B62E00E28E99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B174F8FF1FA9B62E00E28E99 /* Info.plist */; };
 		B1C6AD551FA9AFAB008D9317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6AD541FA9AFAB008D9317 /* AppDelegate.swift */; };
 		B1C6AD5F1FA9AFAB008D9317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C6AD5D1FA9AFAB008D9317 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		2FA96F448E070E0CB4C3C7F8 /* Pods_YandexAutoRSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexAutoRSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD01F35637D84DD8B084160 /* Pods-YandexAutoRSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexAutoRSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexAutoRSS/Pods-YandexAutoRSS.release.xcconfig"; sourceTree = "<group>"; };
+		B10B16861FA9F86900500EF8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist/Info.plist; sourceTree = SOURCE_ROOT; };
 		B114B3271FA9D8A80005D37B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B114B3291FA9DAD90005D37B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		B174F8D81FA9B0FB00E28E99 /* ReadMe */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		B174F8F81FA9B41900E28E99 /* NewsListShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsListShow.storyboard; sourceTree = "<group>"; };
 		B174F8FA1FA9B42500E28E99 /* NewsDetailShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsDetailShow.storyboard; sourceTree = "<group>"; };
 		B174F8FE1FA9B62E00E28E99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B174F8FF1FA9B62E00E28E99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../../../../Downloads/AlamofireRSSParser-master/Example/AlamofireRSSParser/Info.plist"; sourceTree = "<group>"; };
 		B1C6AD511FA9AFAB008D9317 /* YandexAutoRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexAutoRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C6AD541FA9AFAB008D9317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C6AD5E1FA9AFAB008D9317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B174F8FE1FA9B62E00E28E99 /* Images.xcassets */,
-				B174F8FF1FA9B62E00E28E99 /* Info.plist */,
+				B10B16861FA9F86900500EF8 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -195,6 +195,7 @@
 				B1C6AD4F1FA9AFAB008D9317 /* Resources */,
 				BF9D738922AEC8E1C126A591 /* [CP] Embed Pods Frameworks */,
 				AF1BB7A4FA28B674B5336625 /* [CP] Copy Pods Resources */,
+				B10B16881FA9FE1300500EF8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -217,7 +218,7 @@
 				TargetAttributes = {
 					B1C6AD501FA9AFAB008D9317 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -246,7 +247,7 @@
 			files = (
 				B174F8D91FA9B0FB00E28E99 /* ReadMe in Resources */,
 				B174F9001FA9B62E00E28E99 /* Images.xcassets in Resources */,
-				B174F9011FA9B62E00E28E99 /* Info.plist in Resources */,
+				B10B16871FA9F86900500EF8 /* Info.plist in Resources */,
 				B174F8FB1FA9B42500E28E99 /* NewsDetailShow.storyboard in Resources */,
 				B174F8F91FA9B41900E28E99 /* NewsListShow.storyboard in Resources */,
 				B1C6AD5F1FA9AFAB008D9317 /* LaunchScreen.storyboard in Resources */,
@@ -270,6 +271,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YandexAutoRSS/Pods-YandexAutoRSS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B10B16881FA9FE1300500EF8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5199138ab370bad867ec3f137489f3e63e70881d af0046d71438aab83216127b488477013a6fcc7ccc22d6b8be5453057c5413fb";
 		};
 		BF9D738922AEC8E1C126A591 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -396,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -447,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -461,8 +475,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2DS2B364WY;
 				INFOPLIST_FILE = YandexAutoRSS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -480,8 +494,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2DS2B364WY;
 				INFOPLIST_FILE = YandexAutoRSS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,5 +7,7 @@ use_frameworks!
 target 'YandexAutoRSS' do
 
     pod 'OMGRssParser', '~> 0.1'
-
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
 end

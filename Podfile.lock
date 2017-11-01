@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.9.0):
+    - Fabric (~> 1.7.0)
+  - Fabric (1.7.0)
   - Ji (2.0.1):
     - Ji/Ji (= 2.0.1)
   - Ji/Ji (2.0.1):
@@ -8,12 +11,16 @@ PODS:
     - Ji (~> 2.0.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - OMGRssParser (~> 0.1)
 
 SPEC CHECKSUMS:
+  Crashlytics: 64aad5dd97249dd3ff94b979fea140144590cdd3
+  Fabric: e6be012366472553807dada21243c5ab8d904151
   Ji: 6bb602a28dd08b804158f64990e6051ed5de0110
   OMGRssParser: 4a91cf181712daceaf153a6e11d7526f1588e8eb
 
-PODFILE CHECKSUM: 3d91372e4f3446e1b5642f0f9609394dc1c6645c
+PODFILE CHECKSUM: f2d27711b51c9a409d1fcfdc189d4b5e9a3ffdb5
 
 COCOAPODS: 1.4.0.beta.1

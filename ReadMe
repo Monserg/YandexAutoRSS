@@ -37,4 +37,6 @@ Cases:
 
 2. create NewsDetailShow:
     1) add route & pass data between scenes;
+    2) create view design: image + description;
+
 
