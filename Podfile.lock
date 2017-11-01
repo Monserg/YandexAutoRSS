@@ -2,25 +2,21 @@ PODS:
   - Crashlytics (3.9.0):
     - Fabric (~> 1.7.0)
   - Fabric (1.7.0)
-  - Ji (2.0.1):
-    - Ji/Ji (= 2.0.1)
-  - Ji/Ji (2.0.1):
-    - Ji/Ji-libxml
-  - Ji/Ji-libxml (2.0.1)
-  - OMGRssParser (0.1.0):
-    - Ji (~> 2.0.0)
+  - FeedKit (7.0.0)
+  - Kingfisher (4.2.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - OMGRssParser (~> 0.1)
+  - FeedKit (~> 7.0)
+  - Kingfisher (~> 4.2)
 
 SPEC CHECKSUMS:
   Crashlytics: 64aad5dd97249dd3ff94b979fea140144590cdd3
   Fabric: e6be012366472553807dada21243c5ab8d904151
-  Ji: 6bb602a28dd08b804158f64990e6051ed5de0110
-  OMGRssParser: 4a91cf181712daceaf153a6e11d7526f1588e8eb
+  FeedKit: 5f044bbefb6eea7b2f1ff1321b575295bfbdf3fc
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
 
-PODFILE CHECKSUM: f2d27711b51c9a409d1fcfdc189d4b5e9a3ffdb5
+PODFILE CHECKSUM: 8f00547738afc3eafe1b64e17dade8b5da220a46
 
 COCOAPODS: 1.4.0.beta.1

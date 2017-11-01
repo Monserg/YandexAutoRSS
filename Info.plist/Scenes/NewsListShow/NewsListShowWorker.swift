@@ -11,11 +11,11 @@
 //
 
 import UIKit
-import FeedKit
+import OMGRssParser
 
 class NewsListShowWorker {
     // MARK: - Business Logic
-    func fetchFeed(completionHandler: @escaping (Result?) -> Void) {
+    func fetchFeed(completionHandler: @escaping (OMGFeedInfo?) -> Void) {
         let rss = [
                         "https://news.yandex.ru/auto.rss",
                         "https://news.yandex.ru/music.rss",
@@ -24,16 +24,16 @@ class NewsListShowWorker {
                         "https://news.yandex.ru/gadgets.rss"
                     ]
         
-        
-        let feedURL = URL(string: rss[Int(arc4random_uniform(UInt32(rss.count)))])!
-        let parser = FeedParser(URL: feedURL)
-        
-        // Parse asynchronously, not to block the UI.
-        parser?.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
-            // Do your thing, then back to the Main thread
-            DispatchQueue.main.async {
-                completionHandler(result)
+        let rssParser = OMGRssParser(urlStr: rss[Int(arc4random_uniform(UInt32(rss.count)))])
+
+        rssParser.parse(completionHandler: { (info, error) in
+            guard let info = info else {
+                return completionHandler(nil)
             }
-        }
+            
+            completionHandler(info)
+        })
+        
+//        return completionHandler(nil)
     }
 }

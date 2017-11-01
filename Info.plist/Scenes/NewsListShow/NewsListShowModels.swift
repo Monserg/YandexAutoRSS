@@ -1,5 +1,5 @@
 //
-//  NewsDetailShowModels.swift
+//  NewsListShowModels.swift
 //  YandexAutoRSS
 //
 //  Created by msm72 on 01.11.2017.
@@ -11,24 +11,28 @@
 //
 
 import UIKit
+import OMGRssParser
 
 // MARK: - Data models
-enum NewsDetailShowModels {
+enum NewsListShowModels {
     // MARK: - Use cases
-    enum FeedItem {
+    enum FetchedFeed {
         struct RequestModel {
         }
         
         struct ResponseModel {
-            let title: String
-            let description: String
-//            let imageURLString: String
+            var feed: OMGFeedInfo?
         }
         
         struct ViewModel {
-            let title: String
-            let description: String
-//            let imageURL: URL?
+            struct DisplayedFeedItem {
+                var title: String
+                var pubDate: Date
+                var pubDateString: String
+            }
+            
+            var displayedFeedItems: [DisplayedFeedItem]
         }
     }
 }
+

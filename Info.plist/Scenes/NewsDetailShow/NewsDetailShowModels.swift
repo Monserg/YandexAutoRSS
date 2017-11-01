@@ -15,20 +15,14 @@ import UIKit
 // MARK: - Data models
 enum NewsDetailShowModels {
     // MARK: - Use cases
-    enum FeedItem {
+    enum Something {
         struct RequestModel {
         }
         
         struct ResponseModel {
-            let title: String
-            let description: String
-//            let imageURLString: String
         }
         
         struct ViewModel {
-            let title: String
-            let description: String
-//            let imageURL: URL?
         }
     }
 }

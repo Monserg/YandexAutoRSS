@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import OMGRssParser
+import FeedKit
 
 // MARK: - Data models
 enum NewsListShowModels {
@@ -21,7 +21,7 @@ enum NewsListShowModels {
         }
         
         struct ResponseModel {
-            var feed: OMGFeedInfo?
+            var feed: RSSFeed?
         }
         
         struct ViewModel {

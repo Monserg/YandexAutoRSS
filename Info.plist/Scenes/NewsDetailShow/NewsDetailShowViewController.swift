@@ -11,11 +11,10 @@
 //
 
 import UIKit
-import Kingfisher
 
 // MARK: - Input & Output protocols
 protocol NewsDetailShowDisplayLogic: class {
-    func displayFeedItem(fromViewModel viewModel: NewsDetailShowModels.FeedItem.ViewModel)
+    func displaySomething(viewModel: NewsDetailShowModels.Something.ViewModel)
 }
 
 class NewsDetailShowViewController: UIViewController {
@@ -25,8 +24,7 @@ class NewsDetailShowViewController: UIViewController {
     
     
     // MARK: - IBOutlets
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!    
+    // @IBOutlet weak var nameTextField: UITextField!
     
     
     // MARK: - Object lifecycle
@@ -45,10 +43,10 @@ class NewsDetailShowViewController: UIViewController {
     
     // MARK: - Setup
     private func setup() {
-        let viewController          =   self
-        let interactor              =   NewsDetailShowInteractor()
-        let presenter               =   NewsDetailShowPresenter()
-        let router                  =   NewsDetailShowRouter()
+        let viewController  =   self
+        let interactor      =   NewsDetailShowInteractor()
+        let presenter       =   NewsDetailShowPresenter()
+        let router          =   NewsDetailShowRouter()
         
         viewController.interactor   =   interactor
         viewController.router       =   router
@@ -81,7 +79,8 @@ class NewsDetailShowViewController: UIViewController {
     
     // MARK: - Custom Functions
     func viewSettingsDidLoad() {
-        let requestModel = NewsDetailShowModels.FeedItem.RequestModel()
+        let requestModel = NewsDetailShowModels.Something.RequestModel()
+        
         interactor?.doSomething(request: requestModel)
     }
 }
@@ -89,25 +88,8 @@ class NewsDetailShowViewController: UIViewController {
 
 // MARK: - NewsDetailShowDisplayLogic
 extension NewsDetailShowViewController: NewsDetailShowDisplayLogic {
-    func displayFeedItem(fromViewModel viewModel: NewsDetailShowModels.FeedItem.ViewModel) {
+    func displaySomething(viewModel: NewsDetailShowModels.Something.ViewModel) {
         // NOTE: Display the result from the Presenter
-        // TODO: UNCOMMENT WHEN USE IMAGE URL
-        /*
-        if let imageURL = viewModel.imageURL {
-            imageView.kf.setImage(with: ImageResource.init(downloadURL: imageURL, cacheKey: imageURL.absoluteString),
-                                  placeholder: nil,
-                                  options: [.transition(ImageTransition.fade(1)),
-                                            .processor(ResizingImageProcessor(referenceSize: imageView.frame.size,
-                                                                              mode: .aspectFill))],
-                                  completionHandler: { image, error, cacheType, imageURL in
-                                    self.imageView.kf.cancelDownloadTask()
-            })
-        } else {
-            imageView.image = UIImage.init(named: "")
-        }
-         */
-        
-        descriptionLabel.text = viewModel.description
-        navigationItem.title = viewModel.title
+        // nameTextField.text = viewModel.name
     }
 }

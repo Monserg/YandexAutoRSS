@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import FeedKit
+import OMGRssParser
 
 // MARK: - Business Logic protocols
 protocol NewsListShowBusinessLogic {
@@ -19,7 +19,8 @@ protocol NewsListShowBusinessLogic {
 }
 
 protocol NewsListShowDataStore {
-    var feed: RSSFeed? { get }
+    var feed: OMGFeedInfo? { get }
+//    var feed: RSSFeed? { get }
 }
 
 class NewsListShowInteractor: NewsListShowBusinessLogic, NewsListShowDataStore {
@@ -27,16 +28,16 @@ class NewsListShowInteractor: NewsListShowBusinessLogic, NewsListShowDataStore {
     var presenter: NewsListShowPresentationLogic?
     var worker: NewsListShowWorker?
     
-    var feed: RSSFeed?
+    var feed: OMGFeedInfo?
 
     
     // MARK: - Business logic implementation
     func fetchFeed(withRequestModel requestModel: NewsListShowModels.FetchedFeed.RequestModel) {
         worker = NewsListShowWorker()
         
-        worker?.fetchFeed(completionHandler: { result in
-            self.feed = result?.rssFeed
-            let responseModel = NewsListShowModels.FetchedFeed.ResponseModel(feed: self.feed)
+        worker?.fetchFeed(completionHandler: { feed in
+            self.feed = feed
+            let responseModel = NewsListShowModels.FetchedFeed.ResponseModel(feed: feed)
             self.presenter?.presentFetchedFeedItems(fromResponseModel: responseModel)
         })
     }

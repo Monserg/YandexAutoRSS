@@ -11,31 +11,29 @@
 //
 
 import UIKit
-import FeedKit
 
 // MARK: - Business Logic protocols
 protocol NewsDetailShowBusinessLogic {
-    func doSomething(request: NewsDetailShowModels.FeedItem.RequestModel)
+    func doSomething(request: NewsDetailShowModels.Something.RequestModel)
 }
 
 protocol NewsDetailShowDataStore {
-    var feedItem: RSSFeedItem! { get set }
+    //var name: String { get set }
 }
 
 class NewsDetailShowInteractor: NewsDetailShowBusinessLogic, NewsDetailShowDataStore {
     // MARK: - Properties
     var presenter: NewsDetailShowPresentationLogic?
     var worker: NewsDetailShowWorker?
-    
-    var feedItem: RSSFeedItem!
+    //var name: String = ""
     
     
     // MARK: - Business logic implementation
-    func doSomething(request: NewsDetailShowModels.FeedItem.RequestModel) {
+    func doSomething(request: NewsDetailShowModels.Something.RequestModel) {
         worker = NewsDetailShowWorker()
-//        worker?.doSomeWork()
+        worker?.doSomeWork()
         
-        let responseModel = NewsDetailShowModels.FeedItem.ResponseModel(title: feedItem.title!, description: feedItem.description!)
-        presenter?.presentFeedItem(fromResponseModel: responseModel)
+        let responseModel = NewsDetailShowModels.Something.ResponseModel()
+        presenter?.presentSomething(response: responseModel)
     }
 }

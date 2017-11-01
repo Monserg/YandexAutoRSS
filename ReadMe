@@ -38,5 +38,7 @@ Cases:
 2. create NewsDetailShow:
     1) add route & pass data between scenes;
     2) create view design: image + description;
+    3) change scene title;
+    4) TODO: need fix problem with FeedItem image URL.
 
 

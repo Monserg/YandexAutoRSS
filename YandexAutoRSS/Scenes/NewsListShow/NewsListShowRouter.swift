@@ -14,7 +14,7 @@ import UIKit
 
 // MARK: - Input & Output protocols
 @objc protocol NewsListShowRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToNewsDetailShowScene()
 }
 
 protocol NewsListShowDataPassing {
@@ -28,29 +28,25 @@ class NewsListShowRouter: NSObject, NewsListShowRoutingLogic, NewsListShowDataPa
     
     
     // MARK: - Routing
-    //func routeToSomewhere(segue: UIStoryboardSegue?) {
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToNewsDetailShowScene() {
+        let storyboard = UIStoryboard(name: "NewsDetailShow", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailShowVC") as! NewsDetailShowViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        
+        passDataToNewsDetailShow(source: dataStore!, destination: &destinationDS)
+        navigateToNewsDetailShow(source: viewController!, destination: destinationVC)
+    }
     
     
     // MARK: - Navigation
-    //func navigateToSomewhere(source: NewsListShowViewController, destination: SomewhereViewController) {
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToNewsDetailShow(source: NewsListShowViewController, destination: NewsDetailShowViewController) {
+      source.show(destination, sender: nil)
+    }
     
     
     // MARK: - Passing data
-    //func passDataToSomewhere(source: NewsListShowDataStore, destination: inout SomewhereDataStore) {
-    //  destination.name = source.name
-    //}
+    func passDataToNewsDetailShow(source: NewsListShowDataStore, destination: inout NewsDetailShowDataStore) {
+        let selectedRow = (viewController?.tableView.indexPathForSelectedRow?.row)!
+        destination.feedItem = source.feed!.items!.sorted(by: { $0.pubDate! > $1.pubDate! })[selectedRow]
+    }
 }
