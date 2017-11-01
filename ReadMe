@@ -17,3 +17,6 @@ Pods:
 https://github.com/AdeptusAstartes/AlamofireRSSParser
 
 
+Cases:
+1. create NewsListShow
+2. create NewsDetailShow
