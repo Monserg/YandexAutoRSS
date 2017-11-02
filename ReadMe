@@ -39,6 +39,10 @@ Cases:
     1) add route & pass data between scenes;
     2) create view design: image + description;
     3) change scene title;
-    4) TODO: need fix problem with FeedItem image URL.
+    4) TODO: need fix problem with FeedItem image URL;
+    5) add segmented control & 2 RSS URLs;
+    6) add GCD;
+    7) create build 4.
+
 
 

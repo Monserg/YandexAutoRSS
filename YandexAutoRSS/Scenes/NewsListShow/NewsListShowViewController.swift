@@ -36,6 +36,7 @@ class NewsListShowViewController: UIViewController {
     }
         
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     
     // MARK: - Object lifecycle
@@ -90,9 +91,27 @@ class NewsListShowViewController: UIViewController {
     
     // MARK: - Custom Functions
     func fetchFeedsLoad() {
-        view.isUserInteractionEnabled = false
-        let requestModel = NewsListShowModels.FetchedFeed.RequestModel()
-        interactor?.fetchFeed(withRequestModel: requestModel)
+        spinner.startAnimating()
+        tableView.separatorStyle = .none
+        displayedFeedItems = []
+        navigationItem.title = "Loading RSS"
+        tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            Thread.sleep(forTimeInterval: 0.5)
+            
+            OperationQueue.main.addOperation() {
+                self.view.isUserInteractionEnabled = false
+                let requestModel = NewsListShowModels.FetchedFeed.RequestModel(index: self.segmentedControl.selectedSegmentIndex)
+                self.interactor?.fetchFeed(withRequestModel: requestModel)
+            }
+        }
+    }
+    
+    
+    // MARK: - Actions
+    @IBAction func handlerSegmentedControlChangedValue(_ sender: UISegmentedControl) {
+        fetchFeedsLoad()
     }
 }
 
@@ -140,6 +159,7 @@ extension NewsListShowViewController: NewsListShowDisplayLogic {
         navigationItem.title = viewModel.displayedFeedItems.count == 0 ? "Empty Feed" : router?.dataStore?.feed?.title
         
         displayedFeedItems = viewModel.displayedFeedItems
+        tableView.separatorStyle = .singleLine
         tableView.reloadData()
         
         view.isUserInteractionEnabled = true

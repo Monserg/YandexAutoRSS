@@ -18,8 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VZ1-FB-X1Z">
+                                <rect key="frame" x="15" y="15" width="345" height="29"/>
+                                <segments>
+                                    <segment title="Yandex Auto"/>
+                                    <segment title="Gazeta UA"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handlerSegmentedControlChangedValue:" destination="aCb-Gn-MTD" eventType="valueChanged" id="wpO-Ca-fzg"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IkQ-Fv-hli">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="58" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedItemCell" textLabel="8he-V1-bNa" detailTextLabel="A5U-Of-pHh" style="IBUITableViewCellStyleSubtitle" id="DzX-hA-awX">
@@ -48,7 +58,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oJG-iW-0E7">
+                            <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oJG-iW-0E7">
                                 <rect key="frame" x="169.5" y="283" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
@@ -56,16 +66,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oJG-iW-0E7" firstAttribute="centerY" secondItem="lAf-LT-dfV" secondAttribute="centerY" id="9Jk-j1-RQT"/>
+                            <constraint firstItem="VZ1-FB-X1Z" firstAttribute="centerX" secondItem="lAf-LT-dfV" secondAttribute="centerX" id="AYp-iU-gGj"/>
                             <constraint firstItem="K4F-wh-sIz" firstAttribute="trailing" secondItem="IkQ-Fv-hli" secondAttribute="trailing" id="Elb-fX-9CX"/>
+                            <constraint firstItem="IkQ-Fv-hli" firstAttribute="top" secondItem="VZ1-FB-X1Z" secondAttribute="bottom" constant="15" id="Gt0-Fq-Ss7"/>
+                            <constraint firstItem="VZ1-FB-X1Z" firstAttribute="leading" secondItem="K4F-wh-sIz" secondAttribute="leading" constant="15" id="Kya-rr-B3X"/>
+                            <constraint firstItem="K4F-wh-sIz" firstAttribute="trailing" secondItem="VZ1-FB-X1Z" secondAttribute="trailing" constant="15" id="Snb-BP-mzc"/>
                             <constraint firstItem="IkQ-Fv-hli" firstAttribute="leading" secondItem="K4F-wh-sIz" secondAttribute="leading" id="eMQ-XQ-k0l"/>
                             <constraint firstItem="oJG-iW-0E7" firstAttribute="centerX" secondItem="lAf-LT-dfV" secondAttribute="centerX" id="jV2-aI-Adv"/>
+                            <constraint firstItem="VZ1-FB-X1Z" firstAttribute="top" secondItem="K4F-wh-sIz" secondAttribute="top" constant="15" id="jrv-0N-4JT"/>
                             <constraint firstItem="K4F-wh-sIz" firstAttribute="bottom" secondItem="IkQ-Fv-hli" secondAttribute="bottom" id="xHB-vR-yhJ"/>
-                            <constraint firstItem="IkQ-Fv-hli" firstAttribute="top" secondItem="K4F-wh-sIz" secondAttribute="top" id="ySL-O2-Y7i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K4F-wh-sIz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rUA-yh-LZX"/>
+                    <navigationItem key="navigationItem" id="rUA-yh-LZX">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="segmentedControl" destination="VZ1-FB-X1Z" id="2yb-1I-Ge1"/>
                         <outlet property="spinner" destination="oJG-iW-0E7" id="1T3-wa-lHg"/>
                         <outlet property="tableView" destination="IkQ-Fv-hli" id="TzO-vc-oVK"/>
                     </connections>

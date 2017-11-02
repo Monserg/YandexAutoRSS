@@ -34,7 +34,7 @@ class NewsListShowInteractor: NewsListShowBusinessLogic, NewsListShowDataStore {
     func fetchFeed(withRequestModel requestModel: NewsListShowModels.FetchedFeed.RequestModel) {
         worker = NewsListShowWorker()
         
-        worker?.fetchFeed(completionHandler: { result in
+        worker?.fetchFeed(index: requestModel.index, completionHandler: { result in
             self.feed = result?.rssFeed
             let responseModel = NewsListShowModels.FetchedFeed.ResponseModel(feed: self.feed)
             self.presenter?.presentFetchedFeedItems(fromResponseModel: responseModel)

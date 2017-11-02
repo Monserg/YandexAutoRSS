@@ -18,6 +18,7 @@ enum NewsListShowModels {
     // MARK: - Use cases
     enum FetchedFeed {
         struct RequestModel {
+            let index: Int
         }
         
         struct ResponseModel {

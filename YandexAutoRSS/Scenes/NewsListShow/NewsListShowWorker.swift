@@ -15,18 +15,18 @@ import FeedKit
 
 class NewsListShowWorker {
     // MARK: - Business Logic
-    func fetchFeed(completionHandler: @escaping (Result?) -> Void) {
+    func fetchFeed(index: Int, completionHandler: @escaping (Result?) -> Void) {
         let rss = [
                         "https://news.yandex.ru/auto.rss",
-                        "https://news.yandex.ru/music.rss",
-                        "https://news.yandex.ru/showbusiness.rss",
-                        "https://news.yandex.ru/movies.rss",
-                        "https://news.yandex.ru/gadgets.rss",
+//                        "https://news.yandex.ru/music.rss",
+//                        "https://news.yandex.ru/showbusiness.rss",
+//                        "https://news.yandex.ru/movies.rss",
+//                        "https://news.yandex.ru/gadgets.rss",
                         "https://gazeta.ua/rss"
                     ]
         
         
-        let feedURL = URL(string: rss[Int(arc4random_uniform(UInt32(rss.count)))])!
+        let feedURL = URL(string: rss[index])!
         let parser = FeedParser(URL: feedURL)
         
 //        let url = "https://gazeta.ua/rss"

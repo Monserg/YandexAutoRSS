@@ -98,7 +98,7 @@ extension NewsDetailShowViewController: NewsDetailShowDisplayLogic {
                                   placeholder: nil,
                                   options: [.transition(ImageTransition.fade(1)),
                                             .processor(ResizingImageProcessor(referenceSize: imageView.frame.size,
-                                                                              mode: .aspectFit))],
+                                                                              mode: .aspectFill))],
                                   completionHandler: { image, error, cacheType, imageURL in
                                     self.imageView.kf.cancelDownloadTask()
                                     self.spinner.stopAnimating()
